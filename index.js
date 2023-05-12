@@ -12,11 +12,11 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.raw())
 app.use(cookieParser())
-const corsOptions = {
+const corsOptions = ({
     origin: [process.env.FRONTEND_URL],
     methods: ['GET', 'POST', 'UPDATE', 'DELETE'],
     credentials: true
-  };
+  });
   
 app.use(cors(corsOptions));
 const userroutes = require('./routes/users')
